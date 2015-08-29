@@ -1,0 +1,24 @@
+{
+  "name": "leaflet-measurable",
+  "version": "0.0.1",
+  "description": "Leaflet measure control made with Leaflet.Editable",
+  "main": "Leaflet.Measurable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/umap-project/Leaflet.Measurable.git"
+  },
+  "keywords": [
+    "leaflet",
+    "measure",
+    "control"
+  ],
+  "author": "Yohan Boniface",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/umap-project/Leaflet.Measurable/issues"
+  },
+  "homepage": "https://github.com/umap-project/Leaflet.Measurable#readme"
+}
