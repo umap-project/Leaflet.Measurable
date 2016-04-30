@@ -133,6 +133,7 @@ L.Measurable = L.Editable.extend({
         if (this.map.editTools) this.map.editTools.off('editable:drawing:start', this.disable, this);
         L.DomUtil.removeClass(this.map._container, 'measure-enabled');
         this.featuresLayer.clearLayers();
+        this.unregisterForDrawing();
         this.fireAndForward('hidemeasure');
     },
 
