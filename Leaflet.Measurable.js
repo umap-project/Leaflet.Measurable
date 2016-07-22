@@ -102,11 +102,11 @@ L.Measurable = L.Editable.extend({
             var latlng, latlngs = e.layer._defaultShape();
             for (var i = 0; i < latlngs.length; i++) {
                 latlng = latlngs[i];
-                latlng.__vertex.hideLabel();
+                latlng.__vertex.closeTooltip();
             }
             if (latlng && latlng.__vertex) {
                 var length = L.GeoUtil.lineLength(map, e.layer._defaultShape());
-                latlng.__vertex.bindLabel(L.GeoUtil.readableDistance(length, this.getMeasureUnit()), {noHide: true}).showLabel();
+                latlng.__vertex.bindTooltip(L.GeoUtil.readableDistance(length, this.getMeasureUnit()), {permanent: true});
             }
         });
         this.on('editable:drawing:end', function () {
