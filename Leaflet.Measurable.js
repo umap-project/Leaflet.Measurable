@@ -106,7 +106,7 @@ L.Measurable = L.Editable.extend({
             }
             if (latlng && latlng.__vertex) {
                 var length = L.GeoUtil.lineLength(map, e.layer._defaultShape());
-                latlng.__vertex.bindTooltip(L.GeoUtil.readableDistance(length, this.getMeasureUnit()), {permanent: true}).openTooltip();
+                latlng.__vertex.bindTooltip(L.GeoUtil.readableDistance(length, this.getMeasureUnit()), {permanent: true});
             }
         });
         this.on('editable:drawing:end', function () {
