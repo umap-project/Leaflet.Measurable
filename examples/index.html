@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>example for L.Measurable</title>
-    <link href="../node_modules/leaflet/dist/leaflet.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/leaflet/1.0.0-rc.2/leaflet.css" rel="stylesheet">
     <link rel="stylesheet" href="../Leaflet.Measurable.css">
     
     <style>
@@ -13,17 +13,17 @@
 </head>
 <body>
     <div id="map"></div>
-    <script src="../node_modules/leaflet/dist/leaflet-src.js"></script>
-    <script src="../node_modules/leaflet-editable/src/Leaflet.Editable.js"></script>
+    <script src="//cdn.bootcss.com/leaflet/1.0.0-rc.2/leaflet-src.js"></script>
+    <script src="//cdn.bootcss.com/leaflet-editable/0.7.0-beta.1/Leaflet.Editable.js"></script>
     <script src="../Leaflet.Measurable.js"></script>
     <script>
-		var map = L.map('map', {editable: true}).setView([22.5365321328,113.9173539538], 13);
+        var map = L.map('map', {editable: true}).setView([22.5365321328,113.9173539538], 13);
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-		}).addTo(map);
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-     map.addControl(new L.MeasureControl());
-     document.getElementsByClassName('leaflet-measure-toggle')[0].innerHTML= "Measure";
+        map.addControl(new L.MeasureControl());
+        document.getElementsByClassName('leaflet-measure-toggle')[0].innerHTML= "Measure";
 
     </script>
 </body>
