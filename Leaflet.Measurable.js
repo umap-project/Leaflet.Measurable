@@ -193,4 +193,4 @@ L.MeasureControl = L.Control.extend({
 
 L._ = L._ || function (s, data) {  // Fallback if L.I18n is not used.
     return L.Util.template(s, data);
-}
+};
