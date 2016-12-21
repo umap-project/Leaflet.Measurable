@@ -92,7 +92,8 @@ L.Measurable = L.Editable.extend({
         lineGuideOptions: {
             color: '#222'
         },
-        skipMiddleMarkers: true
+        skipMiddleMarkers: true,
+        defaultUnit: 'km'
     },
 
     initialize: function (map, options) {
@@ -142,7 +143,8 @@ L.Measurable = L.Editable.extend({
     },
 
     getMeasureUnit: function () {
-        return document.querySelector('input[name=unit]:checked').value;
+        var input = document.querySelector('input[name=unit]:checked');
+        return input ? input.value : this.options.defaultUnit;
     }
 
 });
@@ -159,11 +161,16 @@ L.MeasureControl = L.Control.extend({
         input.id = value;
         input.name = 'unit';
         input.value = value;
-        if (selected) input.checked = 'checked';
+        if (value === this.map.measureTools.options.defaultUnit) input.checked = 'checked';
         var label = L.DomUtil.create('label', '', container);
         label.innerHTML = short;
         label.title = long;
         label.setAttribute('for', value);
+    },
+
+    initHandler: function (map) {
+        new L.Measurable(map);
+        return this;
     },
 
     onAdd: function(map) {
@@ -171,7 +178,7 @@ L.MeasureControl = L.Control.extend({
 
         this._container = L.DomUtil.create('div', 'leaflet-measure-control leaflet-control');
 
-        new L.Measurable(map);
+        if (!map.measureTools) this.initHandler(map);
 
         var toggle = L.DomUtil.create('a', 'leaflet-measure-toggle', this._container);
         toggle.href = '#';
