@@ -145,7 +145,16 @@ L.Measurable = L.Editable.extend({
     getMeasureUnit: function () {
         var input = document.querySelector('input[name=unit]:checked');
         return input ? input.value : this.options.defaultUnit;
-    }
+    },
+
+
+    blockEvents: function () {
+        // Keep events active for now
+        // see: https://github.com/Leaflet/Leaflet.Editable/issues/99
+        // see: https://github.com/umap-project/umap/issues/423
+    },
+
+    unblockEvents: function () {},
 
 });
 
