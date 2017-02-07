@@ -31,7 +31,7 @@ L.GeoUtil = L.extend(L.GeoUtil || {}, {
             else if (area >= 4840) areaStr = L._('{area} acres', {area: (area / 4840).toFixed(2)});
             else areaStr = L._('{area} yd&sup2;'), {area: Math.ceil(area)};
         } else {
-            if (area >= 10000) areaStr = L._('{area} ha', {area: (area * 0.0001).toFixed(2)});
+            if (area >= 100000) areaStr = L._('{area} ha', {area: (area * 0.0001).toFixed(2)});
             else areaStr = L._('{area} m&sup2;', {area: area.toFixed(2)});
         }
 
@@ -49,7 +49,7 @@ L.GeoUtil = L.extend(L.GeoUtil || {}, {
             distance /= 1852;
             distanceStr = L._('{distance} NM', {distance: Math.ceil(distance)});
         } else {
-            if (distance > 10000) distanceStr = L._('{distance} km', {distance: Math.ceil(distance / 1000)});
+            if (distance > 100000) distanceStr = L._('{distance} km', {distance: Math.ceil(distance / 1000)});
             else if (distance > 1000) distanceStr = L._('{distance} km', {distance: (distance / 1000).toFixed(2)});
             else distanceStr = L._('{distance} m', {distance: Math.ceil(distance)});
         }
