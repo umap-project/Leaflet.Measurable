@@ -43,15 +43,15 @@ L.GeoUtil = L.extend(L.GeoUtil || {}, {
 
         if (unit === 'mi') {
             distance *= 1.09361;
-            if (distance > 1760) distanceStr = L._('{distance} miles', {distance: (distance / 1760).toFixed(2)});
-            else distanceStr = L._('{distance} yd', {distance: distance.toFixed(1)});
+            if (distance > 1760) distanceStr = L._('{distance} miles', {distance: (distance / 1760).toFixed(1)});
+            else distanceStr = L._('{distance} yd', {distance: distance.toFixed(2)});
         } else if (unit === 'nm') {
             distance /= 1852;
             distanceStr = L._('{distance} NM', {distance: Math.ceil(distance)});
         } else {
             if (distance > 100000) distanceStr = L._('{distance} km', {distance: Math.ceil(distance / 1000)});
-            else if (distance > 1000) distanceStr = L._('{distance} km', {distance: (distance / 1000).toFixed(2)});
-            else distanceStr = L._('{distance} m', {distance: distance.toFixed(1)});
+            else if (distance > 1000) distanceStr = L._('{distance} km', {distance: (distance / 1000).toFixed(1)});
+            else distanceStr = L._('{distance} m', {distance: distance.toFixed(2)});
         }
 
         return distanceStr;
