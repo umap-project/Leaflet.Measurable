@@ -26,13 +26,13 @@ L.GeoUtil = L.extend(L.GeoUtil || {}, {
             // Square yards in 1 meter
             area /= 0.836127;
             //3097600 square yards in 1 square mile
-            if (area >= 3097600) areaStr = L._('{area} mi&sup2;', {area: (area / 3097600).toFixed(2)});
+            if (area >= 3097600) areaStr = L._('{area}&#8239;mi&sup2;', {area: (area / 3097600).toFixed(2)});
             //48040 square yards in 1 acre
-            else if (area >= 4840) areaStr = L._('{area} acres', {area: (area / 4840).toFixed(2)});
-            else areaStr = L._('{area} yd&sup2;'), {area: Math.ceil(area)};
+            else if (area >= 4840) areaStr = L._('{area}&#8239;acres', {area: (area / 4840).toFixed(2)});
+            else areaStr = L._('{area}&#8239;yd&sup2;'), {area: Math.ceil(area)};
         } else {
-            if (area >= 100000) areaStr = L._('{area} ha', {area: (area * 0.0001).toFixed(2)});
-            else areaStr = L._('{area} m&sup2;', {area: area.toFixed(2)});
+            if (area >= 100000) areaStr = L._('{area}&#8239;ha', {area: (area * 0.0001).toFixed(2)});
+            else areaStr = L._('{area}&#8239;m&sup2;', {area: area.toFixed(2)});
         }
 
         return areaStr;
@@ -43,15 +43,15 @@ L.GeoUtil = L.extend(L.GeoUtil || {}, {
 
         if (unit === 'mi') {
             distance *= 1.09361;
-            if (distance > 1760) distanceStr = L._('{distance} miles', {distance: (distance / 1760).toFixed(1)});
-            else distanceStr = L._('{distance} yd', {distance: distance.toFixed(2)});
+            if (distance > 1760) distanceStr = L._('{distance}&#8239;miles', {distance: (distance / 1760).toFixed(1)});
+            else distanceStr = L._('{distance}&#8239;yd', {distance: distance.toFixed(2)});
         } else if (unit === 'nm') {
             distance /= 1852;
-            distanceStr = L._('{distance} NM', {distance: Math.ceil(distance)});
+            distanceStr = L._('{distance}&#8239;NM', {distance: Math.ceil(distance)});
         } else {
-            if (distance > 100000) distanceStr = L._('{distance} km', {distance: Math.ceil(distance / 1000)});
-            else if (distance > 1000) distanceStr = L._('{distance} km', {distance: (distance / 1000).toFixed(1)});
-            else distanceStr = L._('{distance} m', {distance: distance.toFixed(2)});
+            if (distance > 100000) distanceStr = L._('{distance}&#8239;km', {distance: Math.ceil(distance / 1000)});
+            else if (distance > 1000) distanceStr = L._('{distance}&#8239;km', {distance: (distance / 1000).toFixed(1)});
+            else distanceStr = L._('{distance}&#8239;m', {distance: distance.toFixed(2)});
         }
 
         return distanceStr;
